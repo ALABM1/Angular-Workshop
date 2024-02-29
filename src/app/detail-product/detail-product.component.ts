@@ -12,15 +12,13 @@ import { ConsumerProductService } from '../services/consumer-product.service';
 export class DetailProductComponent {
 id!:number
 p!:Product
-  constructor(private Act:ActivatedRoute, private consP:ConsumerProductService){}
+  constructor(private Act:ActivatedRoute,private consP:ConsumerProductService){}
 
   ngOnInit(){
     this.id=this.Act.snapshot.params['id']
-    //this.p=this.ps.listProduct[this.id]
-
-    this.consP.getProductById(this.id).subscribe(
-      (data)=>this.p=data
-    )
+   // this.p=this.ps.listProduct[this.id]
+   this.consP.getProductById(this.id).subscribe(
+    (data)=>this.p=data
+   )
   }
-
 }

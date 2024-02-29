@@ -7,12 +7,12 @@ import { Product } from '../model/product';
 })
 export class ConsumerProductService {
 
-  constructor(private http: HttpClient  ) { }
-
+  constructor(private http:HttpClient) { }
+  url:string='http://localhost:3000/products'
   getProduct(){
-    return this.http.get<Product[]>('http://localhost:3000/products')
-    
+    return this.http.get<Product[]>(this.url)
   }
+
   getProductById(id:number){
     return this.http.get<Product>('http://localhost:3000/products'+'/'+id)
   }
@@ -22,8 +22,7 @@ export class ConsumerProductService {
   DeleteProduct(id:number){
     return this.http.delete('http://localhost:3000/products'+'/'+id)
   }
-
-  UpdateProduct(p:Product){
-    return this.http.put('http://localhost:3000/products',p)
+  updateProduct(p:Product,id:number){
+    return this.http.put('http://localhost:3000/products'+'/'+id,p)
   }
 }

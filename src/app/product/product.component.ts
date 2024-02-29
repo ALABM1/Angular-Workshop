@@ -13,21 +13,17 @@ export class ProductComponent {
   listProduct:Product[]=[]
 
   //Injection du service
-  constructor(private ps:ProductSService, private consp:ConsumerProductService){}
+  constructor(private ps:ProductSService,private consp:ConsumerProductService){}
 
   //Remplire listProduct avec la liste du service
   ngOnInit(){
-    // this.listProduct=this.ps.listProduct
+   // this.listProduct=this.ps.listProduct
     this.consp.getProduct().subscribe({
-      next:(data)=> this.listProduct=data ,
-      error : (error)=> console.log(error),
-      complete:()=> console.log('done')
-      
-     
-      
+      next:(data)=>this.listProduct=data,
+      error:(error)=> console.log(error),
+      complete:()=>console.log('done')
     }
     )
-    
   }
 
   increment(id:number){

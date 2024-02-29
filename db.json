@@ -1,18 +1,18 @@
 {
   "products": [
     {
-      "id": 123,
-      "title": "TITLEDJ",
-      "price": 2000,
-      "quantity": 20,
-      "like": 22
-    }
-  ],
-  "appartment": [
-    {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "title": "product 1",
+      "price": 500,
+      "quantity": 10,
+      "like": 0
+    },
+    {
+      "id": 8,
+      "title": "product 2 ",
+      "price": 500,
+      "quantity": 5,
+      "like": 0
     }
   ]
 }

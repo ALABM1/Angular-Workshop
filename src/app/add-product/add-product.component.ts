@@ -5,15 +5,13 @@ import { Product } from '../model/product';
 import { ConsumerProductService } from '../services/consumer-product.service';
 import { Router } from '@angular/router';
 
-
-
 @Component({
   selector: 'app-add-product',
   templateUrl: './add-product.component.html',
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent {
-  constructor(private ps :ProductSService , private consP:ConsumerProductService , private route:Router){}
+  constructor(private ps :ProductSService,private consP:ConsumerProductService,private route:Router){}
   registerForm=new FormGroup({
     id:new FormControl('',Validators.required),
     title:new FormControl('',[Validators.required,Validators.minLength(5)]),
@@ -24,10 +22,10 @@ export class AddProductComponent {
 
   save(){
     console.log(this.registerForm.value)
-    //this.ps.addproduct(this.registerForm.value as any)
-    this.consP.AddProduct(this.registerForm.value as any).subscribe(
-      ()=> this.route.navigateByUrl('/product')
-    )
+   // this.ps.addproduct(this.registerForm.value as any)
+   this.consP.AddProduct(this.registerForm.value as any).subscribe(
+    ()=>{this.route.navigateByUrl('/product')}
+   )
   }
   reset(){
     this.registerForm.reset()
