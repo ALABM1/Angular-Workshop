@@ -1,0 +1,18 @@
+{
+  "products": [
+    {
+      "id": 123,
+      "title": "TITLEDJ",
+      "price": 2000,
+      "quantity": 20,
+      "like": 22
+    }
+  ],
+  "appartment": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ]
+}

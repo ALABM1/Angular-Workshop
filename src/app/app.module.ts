@@ -13,6 +13,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { DetailProductComponent } from './detail-product/detail-product.component';
 import { FormComponent } from './form/form.component';
 import { AddProductComponent } from './add-product/add-product.component';
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -25,13 +26,15 @@ import { AddProductComponent } from './add-product/add-product.component';
     NotFoundComponent,
     DetailProductComponent,
     FormComponent,
-    AddProductComponent
+    AddProductComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
